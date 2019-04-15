@@ -1,0 +1,230 @@
+/* background */
+.bg-auto {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: @color-background;
+  background-size: contain;
+}
+.bg-cover {
+  background-size: cover;
+}
+.bg-contain {
+  background-size: contain;
+}
+.bg-center {
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.bg-top {
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+.bg-right {
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+.bg-bottom {
+  background-repeat: no-repeat;
+  background-position: bottom center;
+}
+.bg-left {
+  background-repeat: no-repeat;
+  background-position: center left;
+}
+
+.bg-white {
+  background-color: @color-white!important;
+}
+.bg-white-light {
+  background-color: @color-white!important;
+}
+
+/* border */
+.bt-white {
+  border-top-color: @color-white!important;
+}
+.br-white {
+  border-right-color: @color-white!important;
+}
+.bb-white {
+  border-bottom-color: @color-white!important;
+}
+.bl-white {
+  border-left-color: @color-white!important;
+}
+.bx-white {
+  border-left-color: @color-white!important;
+  border-right-color: @color-white!important;
+}
+.by-white {
+  border-top-color: @color-white!important;
+  border-bottom-color: @color-white!important;
+}
+.ba-white {
+  border-color: @color-white!important;
+}
+.ba-white-light {
+  border-color: @color-white!important;
+}
+.ba-default {
+  border-color: @color-border!important;
+}
+.ba-default-light {
+  border-color: @color-border!important;
+}
+
+/* text */
+.text-white {
+  color: @color-white!important;
+}
+
+/* coloring */
+.make-brand-coloring();
+.make-brand-coloring(@time: length(@brand-name), @index: 1) when (@index =< @time) {
+  @color: extract(@brand-name, @index);
+
+  @name01: ~'.bt-@{color}';
+  @name02: ~'.br-@{color}';
+  @name03: ~'.bb-@{color}';
+  @name04: ~'.bl-@{color}';
+  @name05: ~'.bx-@{color}';
+  @name06: ~'.by-@{color}';
+  @name07: ~'.ba-@{color}';
+  @name08: ~'.ba-@{color}-light';
+  @name09: ~'.bg-@{color}';
+  @name10: ~'.bg-@{color}-light';
+  @name11: ~'.bg-x-@{color}';
+  @name12: ~'.text-@{color}';
+  @name13: ~'.text-x-@{color}';
+
+  @{name01} {
+    border-top-color: extract(@brand-color-list-6, @index) !important;
+  }
+  @{name02} {
+    border-right-color: extract(@brand-color-list-6, @index) !important;
+  }
+  @{name03} {
+    border-bottom-color: extract(@brand-color-list-6, @index) !important;
+  }
+  @{name04} {
+    border-left-color: extract(@brand-color-list-6, @index) !important;
+  }
+  @{name05} {
+    border-left-color: extract(@brand-color-list-6, @index) !important;
+    border-right-color: extract(@brand-color-list-5, @index) !important;
+  }
+  @{name06} {
+    border-top-color: extract(@brand-color-list-6, @index) !important;
+    border-bottom-color: extract(@brand-color-list-5, @index) !important;
+  }
+  @{name07} {
+    border-color: extract(@brand-color-list-6, @index) !important;
+  }
+  @{name08} {
+    border-color: extract(@brand-color-list-1, @index) !important;
+  }
+  @{name09} {
+    background-color: extract(@brand-color-list-6, @index) !important;
+  }
+  @{name10} {
+    background-color: extract(@brand-color-list-0, @index) !important;
+  }
+  @{name11} {
+    &:hover {
+      background-color: extract(@brand-color-list-4, @index) !important;
+    }
+    &:active,
+    &.is-active {
+      background-color: extract(@brand-color-list-6, @index) !important;
+    }
+  }
+  @{name12} {
+    color: extract(@brand-color-list-6, @index) !important;
+  }
+  @{name13} {
+    &:hover {
+      color: extract(@brand-color-list-6, @index) !important;
+    }
+    &:active,
+    &.is-active {
+      color: extract(@brand-color-list-6, @index) !important;
+    }
+  }
+
+  .make-brand-coloring(@time, (@index + 1));
+}
+
+.make-skin-coloring();
+.make-skin-coloring(@time: length(@skin-name), @index: 1) when (@index =< @time) {
+  @color: extract(@skin-name, @index);
+
+  @name01: ~'.bt-@{color}';
+  @name02: ~'.br-@{color}';
+  @name03: ~'.bb-@{color}';
+  @name04: ~'.bl-@{color}';
+  @name05: ~'.bx-@{color}';
+  @name06: ~'.by-@{color}';
+  @name07: ~'.ba-@{color}';
+  @name08: ~'.ba-@{color}-light';
+  @name09: ~'.bg-@{color}';
+  @name10: ~'.bg-@{color}-light';
+  @name11: ~'.bg-x-@{color}';
+  @name12: ~'.text-@{color}';
+  @name13: ~'.text-x-@{color}';
+
+  @{name01} {
+    border-top-color: extract(@skin-color-list-6, @index) !important;
+  }
+  @{name02} {
+    border-right-color: extract(@skin-color-list-6, @index) !important;
+  }
+  @{name03} {
+    border-bottom-color: extract(@skin-color-list-6, @index) !important;
+  }
+  @{name04} {
+    border-left-color: extract(@skin-color-list-6, @index) !important;
+  }
+  @{name05} {
+    border-left-color: extract(@skin-color-list-6, @index) !important;
+    border-right-color: extract(@skin-color-list-5, @index) !important;
+  }
+  @{name06} {
+    border-top-color: extract(@skin-color-list-6, @index) !important;
+    border-bottom-color: extract(@skin-color-list-5, @index) !important;
+  }
+  @{name07} {
+    border-color: extract(@skin-color-list-6, @index) !important;
+  }
+  @{name08} {
+    border-color: extract(@skin-color-list-1, @index) !important;
+  }
+  @{name09} {
+    background-color: extract(@skin-color-list-6, @index) !important;
+  }
+  @{name10} {
+    background-color: extract(@skin-color-list-0, @index) !important;
+  }
+  @{name11} {
+    &:hover {
+      background-color: extract(@skin-color-list-4, @index) !important;
+    }
+    &:active,
+    &.is-active {
+      background-color: extract(@skin-color-list-6, @index) !important;
+    }
+  }
+  @{name12} {
+    color: extract(@skin-color-list-6, @index) !important;
+  }
+  @{name13} {
+    &:hover {
+      color: extract(@skin-color-list-6, @index) !important;
+    }
+    &:active,
+    &.is-active {
+      color: extract(@skin-color-list-6, @index) !important;
+    }
+  }
+
+  .make-skin-coloring(@time, (@index + 1));
+}

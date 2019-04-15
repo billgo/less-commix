@@ -1,0 +1,29 @@
+.mixin-keyframe(@values, @mod) {
+  & when (length(@values) = 4) and (length(extract(@values, 1)) = 1) {
+    .mixin-calculate-props(@values, @mod);
+  }
+  & when not (length(@values) = 4) {
+    .mixin-calculate-multiple-props(@values, @mod);
+  }
+  & when not (length(extract(@values, 1)) = 1) {
+    .mixin-calculate-multiple-props(@values, @mod);
+  }
+}
+.mixin-calculate-props(@propVals, @mod) {
+  @propName: e(extract(@propVals, 1));
+  @str: extract(@propVals, 2);
+  @from: extract(@propVals, 3);
+  @to: extract(@propVals, 4);
+
+  @newValue: @from + (@to - @from) * @mod;
+  @newStr: replace(@str, 'XX', @newValue);
+
+  @{propName}: e(@newStr);
+}
+
+.mixin-calculate-multiple-props(@props, @mod) {
+  .mixin-for(@props);
+  .-each(@value) {
+    .mixin-calculate-props(@value, @mod);
+  }
+}

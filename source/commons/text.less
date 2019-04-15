@@ -1,0 +1,61 @@
+/* text property */
+.text-lowercase {
+  text-transform: lowercase !important;
+}
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+.text-capitalize {
+  text-transform: capitalize !important;
+}
+.text-overflow {
+  .mixin-text-overflow();
+}
+.text-hidden {
+  .mixin-text-hide();
+}
+
+/* text alignment */
+.text-left {
+  text-align: left !important;
+}
+.text-right {
+  text-align: right !important;
+}
+.text-center {
+  text-align: center !important;
+}
+.text-justify {
+  text-align: justify !important;
+}
+.text-nowrap {
+  white-space: nowrap !important;
+}
+
+.make-responsive-text();
+.make-responsive-text(@time: length(@breakpoint-list), @index: 1) when (@index =< @time) {
+  @breakpoint: extract(@breakpoint-name, @index);
+  @name1: ~'.text-@{breakpoint}-left';
+  @name2: ~'.text-@{breakpoint}-right';
+  @name3: ~'.text-@{breakpoint}-center';
+  @name4: ~'.text-@{breakpoint}-justify';
+  @name5: ~'.text-@{breakpoint}-nowrap';
+  @media (min-width: extract(@breakpoint-list, @index)) {
+    @{name1} {
+      text-align: left !important;
+    }
+    @{name2} {
+      text-align: right !important;
+    }
+    @{name3} {
+      text-align: center !important;
+    }
+    @{name4} {
+      text-align: justify !important;
+    }
+    @{name5} {
+      white-space: nowrap !important;
+    }
+  }
+  .make-responsive-text(@time, (@index + 1));
+}

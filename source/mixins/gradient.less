@@ -1,0 +1,69 @@
+.mixin-gradient-linear(@start:left top, @end: left bottom, @color1: #cccccc, @color2: #fcfcfc) {
+  background-color: @color2;
+  background-repeat: no-repeat;
+  background-image: -webkit-gradient(linear, @start, @end, from(@color1), to(@color2));
+  background-image: -webkit-linear-gradient(@start, @end, @color1, @color2);
+  background-image: -moz-linear-gradient(@start, @end, @color1, @color2);
+  background-image: -ms-linear-gradient(@start, @end, @color1, @color2);
+  background-image: -o-linear-gradient(@start, @end, @color1, @color2);
+  background-image: linear-gradient(to @end, @color1, @color2);
+}
+
+.mixin-gradient-linear-3color(@start:left top, @end: left bottom, @color1: #fcfcfc, @color2: #cccccc, @color3: #fcfcfc) {
+  background-color: @color3;
+  background-repeat: no-repeat;
+  background-image: -webkit-gradient(linear, @start, @end, from(@color1), to(@color2), to(@color3));
+  background-image: -webkit-linear-gradient(@start, @end, @color1, @color2, @color3);
+  background-image: -moz-linear-gradient(@start, @end, @color1, @color2, @color3);
+  background-image: -ms-linear-gradient(@start, @end, @color1, @color2, @color3);
+  background-image: -o-linear-gradient(@start, @end, @color1, @color2, @color3);
+  background-image: linear-gradient(to @end, @color1, @color2, @color3);
+}
+
+.mixin-gradient-linear-5color(@start:top, @end:bottom, @color1: #072b4f, @color2: #205d8a, @color3: #8dc0b8, @color4: #e89a44, @color5: #e8853b) {
+  background-color: @color1;
+  background-repeat: no-repeat;
+  background-image: -webkit-gradient(
+    linear,
+    @start,
+    @end,
+    from(@color1),
+    to(@color2),
+    to(@color3),
+    to(@color4),
+    to(@color5)
+  );
+  background-image: -webkit-linear-gradient(@start, @end, @color1, @color2, @color3, @color4, @color5);
+  background-image: -moz-linear-gradient(@start, @end, @color1, @color2, @color3, @color4, @color5);
+  background-image: -ms-linear-gradient(@start, @end, @color1, @color2, @color3, @color4, @color5);
+  background-image: -o-linear-gradient(@start, @end, @color1, @color2, @color3, @color4, @color5);
+  background-image: linear-gradient(to @end, @color1, @color2, @color3, @color4, @color5);
+}
+
+.mixin-gradient-radial(@centerX: center, @centerY: center, @shape: circle, @size: contain, @startColor: #cccccc, @startPos: 0, @endColor: #fcfcfc, @endPos: 100%) {
+  background-color: @endColor;
+  background-image: -moz-radial-gradient(@centerX @centerY, @shape @size, @startColor @startPos, @endColor @endPos);
+  background-image: -webkit-gradient(radial, @centerX @centerY, @shape @size, @startColor @startPos, @endColor @endPos);
+  background-image: -webkit-radial-gradient(@centerX @centerY, @shape @size, @startColor @startPos, @endColor @endPos);
+  background-image: -o-radial-gradient(@centerX @centerY, @shape @size, @startColor @startPos, @endColor @endPos);
+  background-image: -ms-radial-gradient(@centerX @centerY, @shape @size, @startColor @startPos, @endColor @endPos);
+  background-image: radial-gradient(@shape at @centerX @centerY, @startColor @startPos, @endColor @endPos);
+}
+
+.mixin-gradient-radial-sphere(@color1: #cccccc, @color2:#fcfcfc, @centerX: 30%, @centerY: 40%) {
+  background-image: -webkit-radial-gradient(@centerX @centerY, @color1, @color2);
+  background-image: -moz-radial-gradient(@centerX @centerY, @color1, @color2);
+  background-image: -ms-radial-gradient(@centerX @centerY, @color1, @color2);
+  background-image: -o-radial-gradient(@centerX @centerY, @color1, @color2);
+  background-image: radial-gradient(circle at @centerX @centerY, @color1, @color2);
+}
+
+.mixin-gradient-radial-3color(@shape: ellipse, @color1: #323232 0%, @color2: #cccccc 50%, @color3: #fcfcfc) {
+  background-color: @color1;
+  background-image: -moz-radial-gradient(center center, @shape, @color1, @color2, @color3);
+  background-image: -webkit-gradient(center center, @shape, @color1, @color2, @color3);
+  background-image: -webkit-radial-gradient(center center, @shape, @color1, @color2, @color3);
+  background-image: -o-radial-gradient(center center, @shape, @color1, @color2, @color3);
+  background-image: -ms-radial-gradient(center center, @shape, @color1, @color2, @color3);
+  background-image: radial-gradient(@shape at center, @color1, @color2, @color3);
+}

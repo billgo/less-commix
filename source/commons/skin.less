@@ -1,0 +1,116 @@
+/* default */
+.skin-default,
+.skin-x-default,
+.skin-o-default {
+  color: @color-text;
+  border: 1px solid @color-border;
+  background-color: @color-white;
+}
+
+.skin-x-default,
+.skin-o-default {
+  &:hover {
+    background-color: lighten(@color-background, 5%);
+  }
+  &:active,
+  &.is-active {
+    background-color: darken(@color-background, 5%);
+  }
+}
+
+/* brand */
+.make-brand();
+.make-brand(@time: length(@brand-name), @index: 1) when (@index =< @time) {
+  @item: extract(@brand-name, @index);
+
+  @name1: ~'.skin-@{item},.skin-x-@{item}';
+  @name2: ~'.skin-x-@{item}';
+  @name3: ~'.skin-o-@{item}';
+  @name4: ~'.skin-@{item} > .is-transparent,.skin-x-@{item} > .is-transparent,.skin-o-@{item} > .is-transparent';
+
+  @{name1} {
+    color: @color-default-0;
+    border: 1px solid extract(@brand-color-list-6, @index);
+    background-color: extract(@brand-color-list-5, @index);
+    > .is-transparent {
+      border-color: extract(@brand-color-list-6, @index);
+    }
+  }
+  @{name2} {
+    &:hover {
+      background-color: extract(@brand-color-list-4, @index);
+    }
+    &:active,
+    &.is-active {
+      border: 1px solid extract(@brand-color-list-7, @index);
+      background-color: extract(@brand-color-list-6, @index);
+    }
+  }
+  @{name3} {
+    color: extract(@brand-color-list-5, @index);
+    background-color: @color-white;
+    border: 1px solid extract(@brand-color-list-6, @index);
+    &:hover {
+      background-color: extract(@brand-color-list-1, @index);
+    }
+    &:active,
+    &.is-active {
+      background-color: extract(@brand-color-list-5, @index);
+      color: @color-white;
+    }
+    > .is-transparent {
+      border-color: extract(@brand-color-list-6, @index);
+    }
+  }
+  @{name4} {
+    border-color: extract(@brand-color-list-6, @index);
+  }
+  .make-brand(@time, (@index + 1));
+}
+
+/* theme */
+.make-skin();
+.make-skin(@time: length(@skin-name), @index: 1) when (@index =< @time) {
+  @item: extract(@skin-name, @index);
+
+  @name1: ~'.skin-@{item},.skin-x-@{item}';
+  @name2: ~'.skin-x-@{item}';
+  @name3: ~'.skin-o-@{item}';
+  @name4: ~'.skin-@{item} > .is-transparent,.skin-x-@{item} > .is-transparent,.skin-o-@{item} > .is-transparent';
+
+  @{name1} {
+    color: @color-default-0;
+    border: 1px solid extract(@skin-color-list-6, @index);
+    background-color: extract(@skin-color-list-5, @index);
+  }
+  @{name2} {
+    &:hover {
+      background-color: extract(@skin-color-list-4, @index);
+    }
+    &:active,
+    &.is-active {
+      border: 1px solid extract(@skin-color-list-7, @index);
+      background-color: extract(@skin-color-list-6, @index);
+    }
+  }
+  @{name3} {
+    color: extract(@skin-color-list-5, @index);
+    background-color: @color-white;
+    border: 1px solid extract(@skin-color-list-6, @index);
+    &:hover {
+      background-color: extract(@skin-color-list-1, @index);
+    }
+    &:active,
+    &.is-active {
+      background-color: extract(@skin-color-list-5, @index);
+      color: @color-white;
+    }
+    > .is-transparent {
+      border-color: extract(@skin-color-list-6, @index);
+    }
+  }
+  @{name4} {
+    border-color: extract(@skin-color-list-6, @index);
+  }
+  .make-skin(@time, (@index + 1));
+}

@@ -1,0 +1,39 @@
+.make-size();
+.make-size(@time: length(@size-name), @index: 1) when (@index =< @time) {
+  @item: extract(@size-name, @index);
+
+  @name1: ~'.size-@{item},.size-x-@{item}';
+  @name2: ~'.size-i-@{item}';
+
+  @{name1} {
+    line-height: 1;
+    font-size: extract(@font-size-list, @index);
+    padding: extract(@padding-y-size-list, @index) extract(@padding-x-size-list, @index);
+    &.is-quadrate {
+      padding: extract(@padding-y-size-list, @index);
+    }
+  }
+
+  @{name2} {
+    line-height: 1.25;
+    font-size: extract(@font-size-list, @index) * 0.8;
+    padding: extract(@padding-y-size-list, @index) + @rem-unit extract(@padding-x-size-list, @index)
+      extract(@padding-y-size-list, @index);
+    &.is-quadrate {
+      padding: extract(@padding-y-size-list, @index) + @rem-unit;
+    }
+  }
+
+  .make-size(@time, (@index + 1));
+}
+
+/* Fix */
+.size-i-medium {
+  padding-top: @padding-y-size-medium;
+  padding-bottom: @padding-y-size-medium;
+}
+
+.size-i-huge {
+  padding-top: @padding-y-size-huge;
+  padding-bottom: @padding-y-size-huge;
+}

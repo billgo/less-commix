@@ -1,0 +1,41 @@
+article {
+  font-family: @font-family-serif;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: @font-weight-semibold;
+  }
+
+  p {
+    line-height: @line-height-standard;
+  }
+
+  p,
+  pre,
+  ul,
+  ol,
+  dl,
+  form,
+  hr,
+  table,
+  blockquote {
+    margin-bottom: 1em;
+  }
+
+  ul,
+  ol {
+    padding-left: 1.25em;
+  }
+
+  li > p {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: @breakpoint-sm) {
+    font-size: @font-size-small;
+  }
+}

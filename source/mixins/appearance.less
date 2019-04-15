@@ -1,0 +1,8 @@
+.mixin-appearance-size(@width; @height) {
+  width: @width;
+  height: @height;
+}
+
+.mixin-appearance-square(@size) {
+  .mixin-appearance-size(@size; @size);
+}

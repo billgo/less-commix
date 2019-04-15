@@ -1,0 +1,40 @@
+// Transform default
+.mixin-transform(@arguments) {
+  -webkit-transform: @arguments;
+  -moz-transform: @arguments;
+  transform: @arguments;
+}
+
+// Transform rotation
+// 通过 rotate() 方法，元素顺时针旋转给定的角度。允许负值，元素将逆时针旋转。
+.mixin-transform-rotate(@deg:45deg) {
+  -webkit-transform: rotate(@deg);
+  -moz-transform: rotate(@deg);
+  transform: rotate(@deg);
+}
+
+// Transform scale
+// 通过 scale() 方法，元素的尺寸会增加或减少，根据给定的宽度（X 轴）和高度（Y 轴）参数。
+.mixin-transform-scale(@ratio:1.5) {
+  -webkit-transform: scale(@ratio);
+  -moz-transform: scale(@ratio);
+  transform: scale(@ratio);
+}
+
+// Translate
+// 通过 translate() 方法，元素从其当前位置移动，根据给定的 left（x 坐标） 和 top（y 坐标） 位置参数：
+.mixin-transform-translate-2d(@x:0, @y:0) {
+  -moz-transform: translate(@x, @y);
+  -webkit-transform: translate(@x, @y);
+  -o-transform: translate(@x, @y);
+  -ms-transform: translate(@x, @y);
+  transform: translate(@x, @y);
+}
+
+// Translate3d
+.mixin-transform-translate-3d(@x, @y, @z) {
+  -webkit-transform: translate3d(@x, @y, @z);
+  -moz-transform: translate3d(@x, @y, @z);
+  -o-transform: translate3d(@x, @y, @z);
+  transform: translate3d(@x, @y, @z);
+}

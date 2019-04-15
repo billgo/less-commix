@@ -1,0 +1,28 @@
+/* screen */
+.screen-auto {
+  margin-left: auto;
+  margin-right: auto;
+  &:extend(.mixin-clearfix all);
+  .make-screen-auto();
+}
+.make-screen-auto();
+.make-screen-auto(@time: length(@breakpoint-list), @index: 1) when (@index =< @time) {
+  @media (min-width: extract(@breakpoint-list, @index)) {
+    max-width: extract(@screen-size-list, @index);
+  }
+  .make-screen-auto(@time, (@index + 1));
+}
+
+.make-screen-size();
+.make-screen-size(@time: length(@breakpoint-name), @index: 1) when (@index =< @time) {
+  @size: extract(@breakpoint-name, @index);
+  @name: ~'.screen-@{size}';
+  &@{name} {
+    padding: @grid-gutters / 2;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: extract(@screen-size-list, @index);
+    &:extend(.mixin-clearfix all);
+  }
+  .make-screen-size(@time, (@index + 1));
+}

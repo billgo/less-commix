@@ -1,0 +1,10 @@
+.mixin-opacity(@opacity) {
+  opacity: @opacity;
+  @opacityie : @opacity * 100;
+  filter: ~'alpha(opacity=@{opacityIE})';
+}
+
+.mixin-appearance(@appearance:none) {
+  -webkit-appearance: @appearance;
+  appearance: @appearance;
+}

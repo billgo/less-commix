@@ -6593,6 +6593,11 @@ less-loader@^4.1.0:
     loader-utils "^1.1.0"
     pify "^3.0.0"
 
+less-palette@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/less-palette/-/less-palette-0.0.1.tgz#d54a162a719c96ae196036053ff2488fd68e61f8"
+  integrity sha512-tTt4rfoQJdrGF/H/4LHciQyp1ATZkYClpHSWGq2wRM0YGDV6/OZ3+AzpyAYGYC9T9RJvnNv+TX6DOuAxnQS7Vw==
+
 less-plugin-autoprefix@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/less-plugin-autoprefix/-/less-plugin-autoprefix-2.0.0.tgz#778e6f2fe56884381c4fc3c747b0879e944f8481"

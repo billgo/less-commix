@@ -1,0 +1,198 @@
+/* ====== display ========= */
+.ds-inline {
+  display: inline !important;
+}
+.ds-inline-block {
+  display: inline-block !important;
+}
+.ds-block {
+  display: block !important;
+}
+.ds-table {
+  display: table !important;
+}
+.ds-table-cell {
+  display: table-cell !important;
+}
+.ds-flex {
+  display: flex !important;
+}
+.ds-inline-flex {
+  display: inline-flex !important;
+}
+.ds-none {
+  display: none;
+}
+.ds-fable {
+  display: table !important;
+  table-layout: fixed;
+  position: relative;
+  height: auto !important;
+  width: 100%;
+}
+.ds-fable-cell {
+  display: table-cell !important;
+  overflow: hidden;
+}
+
+.make-display();
+.make-display(@time: length(@breakpoint-list), @index: 1) when (@index =< @time) {
+  @breakpoint: extract(@breakpoint-name, @index);
+
+  @name1: ~'.ds-@{breakpoint}-inline';
+  @name2: ~'.ds-@{breakpoint}-inline-block';
+  @name3: ~'.ds-@{breakpoint}-block';
+  @name4: ~'.ds-@{breakpoint}-table';
+  @name5: ~'.ds-@{breakpoint}-table-cell';
+  @name6: ~'.ds-@{breakpoint}-flex';
+  @name7: ~'.ds-@{breakpoint}-inline-flex';
+
+  @media (min-width: extract(@breakpoint-list, @index)) {
+    @{name1} {
+      display: inline !important;
+    }
+    @{name2} {
+      display: inline-block !important;
+    }
+    @{name3} {
+      display: block !important;
+    }
+    @{name4} {
+      display: table !important;
+    }
+    @{name5} {
+      display: table-cell !important;
+    }
+    @{name6} {
+      display: flex !important;
+    }
+    @{name7} {
+      display: inline-flex !important;
+    }
+  }
+
+  .make-display(@time, (@index + 1));
+}
+
+.ds-print-block {
+  display: none !important;
+  @media print {
+    display: block !important;
+  }
+}
+
+.ds-print-inline {
+  display: none !important;
+  @media print {
+    display: inline !important;
+  }
+}
+
+.ds-print-inline-block {
+  display: none !important;
+  @media print {
+    display: inline-block !important;
+  }
+}
+
+.ds-print-none {
+  @media print {
+    display: none !important;
+  }
+}
+
+/* dimension length */
+.make-length-size();
+.make-length-size(@time: length(@size-name), @index: 1) when (@index =< @time) {
+  @item: extract(@size-name, @index);
+  @name1: ~'.dl-t-@{item}';
+  @{name1} {
+    flex: 0 0 extract(@target-size-list, @index);
+    max-width: extract(@target-size-list, @index);
+  }
+  .make-length-size(@time, (@index + 1));
+}
+.dl-none {
+  display: none;
+}
+
+/* dimension width */
+.dw-100 {
+  width: 100% !important;
+  max-width: 100%;
+}
+.dw-75 {
+  width: 75% !important;
+  max-width: 75%;
+}
+.dw-50 {
+  width: 50% !important;
+  max-width: 50%;
+}
+.dw-25 {
+  width: 25% !important;
+  max-width: 25%;
+}
+.make-width-size();
+.make-width-size(@time: length(@size-name), @index: 1) when (@index =< @time) {
+  @item: extract(@size-name, @index);
+  @name1: ~'.dw-t-@{item}';
+  @name2: ~'.dw-e-@{item}';
+  @name3: ~'.dw-e-@{item}-2x';
+  @{name1} {
+    width: extract(@target-size-list, @index);
+    max-width: extract(@target-size-list, @index);
+    overflow-x: hidden;
+  }
+  @{name2} {
+    width: extract(@element-size-list, @index) + @rem-unit-2;
+    max-width: extract(@element-size-list, @index) + @rem-unit-2;
+    overflow-x: hidden;
+  }
+  @{name3} {
+    width: extract(@element-size-list, @index) * 2 + @rem-unit-2;
+    max-width: extract(@element-size-list, @index) * 2 + @rem-unit-2;
+    overflow-x: hidden;
+  }
+  .make-width-size(@time, (@index + 1));
+}
+.dw-none {
+  display: none;
+}
+
+/* dimension height */
+.dh-viewport {
+  height: 100vh;
+}
+.dh-100 {
+  height: 100% !important;
+  max-height: 100%;
+}
+.dh-75 {
+  height: 75% !important;
+  max-height: 75%;
+}
+.dh-50 {
+  height: 50% !important;
+  max-height: 50%;
+}
+.dh-25 {
+  height: 25% !important;
+  max-height: 25%;
+}
+.make-height-size();
+.make-height-size(@time: length(@size-name), @index: 1) when (@index =< @time) {
+  @item: extract(@size-name, @index);
+  @name1: ~'.dh-t-@{item}';
+  @name2: ~'.dh-e-@{item}';
+  @{name1} {
+    height: extract(@target-size-list, @index) + @rem-unit-2;
+  }
+  @{name2} {
+    height: extract(@element-size-list, @index) + @rem-unit-2;
+  }
+  .make-height-size(@time, (@index + 1));
+}
+.dh-none {
+  display: none;
+}

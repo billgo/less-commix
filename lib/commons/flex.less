@@ -1,0 +1,109 @@
+/* ====== direction ========= */
+.flex {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+/* ====== flex auto ========= */
+.flex-auto {
+  flex: 1 1 auto;
+}
+
+/* ====== direction ========= */
+.flex-row {
+  flex-direction: row;
+}
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
+.flex-column {
+  flex-direction: column;
+}
+.flex-column-reverse {
+  flex-direction: column-reverse;
+}
+.make-flex-direction();
+.make-flex-direction(@time: length(@breakpoint-list), @index: 1) when (@index =< @time) {
+  @breakpoint: extract(@breakpoint-name, @index);
+  @name1: ~'.flex-@{breakpoint}-row';
+  @name2: ~'.flex-@{breakpoint}-row-reverse';
+  @name3: ~'.flex-@{breakpoint}-column';
+  @name4: ~'.flex-@{breakpoint}-column-reverse';
+  @media (min-width: extract(@breakpoint-list, @index)) {
+    @{name1} {
+      flex-direction: row;
+    }
+    @{name2} {
+      flex-direction: row-reverse;
+    }
+    @{name3} {
+      flex-direction: column;
+    }
+    @{name4} {
+      flex-direction: column-reverse;
+    }
+  }
+  .make-flex-direction(@time, (@index + 1));
+}
+
+/* ====== newline ========= */
+.flex-wrap {
+  flex-wrap: wrap !important;
+}
+.flex-nowrap {
+  flex-wrap: nowrap !important;
+}
+.flex-reverse {
+  flex-wrap: wrap-reverse !important;
+}
+.make-flex-newline();
+.make-flex-newline(@time: length(@breakpoint-list), @index: 1) when (@index =< @time) {
+  @breakpoint: extract(@breakpoint-name, @index);
+  @name1: ~'.flex-@{breakpoint}-wrap';
+  @name2: ~'.flex-@{breakpoint}-nowrap';
+  @name3: ~'.flex-@{breakpoint}-reverse';
+  @media (min-width: extract(@breakpoint-list, @index)) {
+    @{name1} {
+      flex-wrap: wrap !important;
+    }
+    @{name2} {
+      flex-wrap: nowrap !important;
+    }
+    @{name3} {
+      flex-wrap: wrap-reverse !important;
+    }
+  }
+  .make-flex-newline(@time, (@index + 1));
+}
+
+/* ====== order ========= */
+.flex-order-first {
+  order: -1;
+}
+.flex-order-last {
+  order: 1;
+}
+.flex-order-none {
+  order: 0;
+}
+.make-flex-order();
+.make-flex-order(@time: length(@breakpoint-list), @index: 1) when (@index =< @time) {
+  @breakpoint: extract(@breakpoint-name, @index);
+  @name1: ~'.flex-@{breakpoint}-order-first';
+  @name2: ~'.flex-@{breakpoint}-order-last';
+  @name3: ~'.flex-@{breakpoint}-order-none';
+  @media (min-width: extract(@breakpoint-list, @index)) {
+    @{name1} {
+      order: -1;
+    }
+    @{name1} {
+      order: 1;
+    }
+    @{name1} {
+      order: 0;
+    }
+  }
+  .make-flex-order(@time, (@index + 1));
+}

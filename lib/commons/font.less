@@ -1,0 +1,36 @@
+/* font-weight */
+.font-light {
+  font-weight: @font-weight-light!important;
+}
+.font-regular {
+  font-weight: @font-weight-regular!important;
+}
+.font-bold {
+  font-weight: @font-weight-semibold!important;
+}
+
+/* font-family */
+.font-sans,
+.font-sans * {
+  font-family: @font-family-sans!important;
+}
+.font-serif,
+.font-serif * {
+  font-family: @font-family-serif!important;
+}
+.font-mono,
+.font-mono * {
+  font-family: @font-family-mono!important;
+}
+
+/* font-size */
+.make-font-size();
+.make-font-size(@time: length(@size-name), @index: 1) when (@index =< @time) {
+  @item: extract(@size-name, @index);
+  @name: ~'.font-@{item}';
+  @{name} {
+    font-size: extract(@font-size-list, @index);
+    line-height: extract(@line-height-list, @index);
+  }
+  .make-font-size(@time, (@index + 1));
+}

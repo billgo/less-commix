@@ -1,0 +1,28 @@
+// Transition
+.mixin-transition(@transition) {
+  -webkit-transition: @transition;
+  -moz-transition: @transition;
+  -o-transition: @transition;
+  transition: @transition;
+}
+
+// Transtion-delay
+// 规定过渡效果何时开始。默认是 0。
+.mixin-transition-delay(@transition-delay) {
+  -webkit-transition-delay: @transition-delay;
+  -moz-transition-delay: @transition-delay;
+  -o-transition-delay: @transition-delay;
+  transition-delay: @transition-delay;
+}
+
+// Transtion-duration
+// 定义过渡效果花费的时间。默认是 0。
+.mixin-transition-duration(@transition-duration) {
+  -webkit-transition-duration: @transition-duration;
+  -moz-transition-duration: @transition-duration;
+  -o-transition-duration: @transition-duration;
+  transition-duration: @transition-duration;
+}
+
+// Transtion-timing-function
+// 规定过渡效果的时间曲线。默认是 "ease"。

@@ -1,7 +1,7 @@
 {
   "name": "less-commix",
   "npmName": "lesscommix",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Billgo",
   "license": "MIT",
   "description": "less color commix",
@@ -23,8 +23,8 @@
     "test": "BABEL_ENV=test jest --no-cache && jest-coverage-badges --output ./reports"
   },
   "dependencies": {
-    "less-palette": "^0.0.2",
-    "less-variable": "^0.0.2"
+    "less-palette": "^0.0.3",
+    "less-variable": "^0.0.3"
   },
   "devDependencies": {
     "autoprefixer": "^9.5.1",

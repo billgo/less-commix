@@ -5594,17 +5594,17 @@ left-pad@^1.3.0:
   resolved "https://registry.yarnpkg.com/left-pad/-/left-pad-1.3.0.tgz#5b8a3a7765dfe001261dde915589e782f8c94d1e"
   integrity sha512-XI5MPzVNApjAyhQzphX8BkmKsKUxD4LdyK24iZeQGinBN9yTQT3bFlCBy/aVx2HrNcqQGsdot8ghrjyrvMCoEA==
 
-less-palette@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/less-palette/-/less-palette-0.0.2.tgz#5e893b228b642e8e5fd4cc22e76bd1f852aa5345"
-  integrity sha512-gipO0Mvcpm1zW+YGtyAlu04+MBxYsaZ3BTRlOijQkjsi9IqMvm5HGvtqbi04CxhYyIeKgwG1o8iqcfYtVEsRJQ==
+less-palette@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/less-palette/-/less-palette-0.0.3.tgz#44d64fda3286fda2e2cb5888f6e0b8c1d971b420"
+  integrity sha512-8GsAqWmFUiDL2bzLacAgo1JyKFGxOkncv672eIExkZq890mMp5wpRIKDCrVFhq3Xjb4p1FOFsDpu38Mxi6J/gA==
 
-less-variable@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/less-variable/-/less-variable-0.0.2.tgz#9a01bbcf3695a96498eef02623fc66bd07dbef57"
-  integrity sha512-47838d9+q2wdHHM7u48iurASTa+bAAzNwkrIrhKUU/yQ3VqFqaYNSWBHpuFCIgEjKvx5TABNzW1kCeE3pU6xRw==
+less-variable@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/less-variable/-/less-variable-0.0.3.tgz#bdeb9b5d7957805a357a06af371335b1d95d3469"
+  integrity sha512-ywajbbaBrIP8f7CVqIKP7qFvPk0CqgjSEavFeRlhVGZUkMitfA0SrqmpF1ze1p+gmBykVQudWu2WY3bv0oQPNw==
   dependencies:
-    less-palette "^0.0.2"
+    less-palette "^0.0.3"
 
 less@^3.9.0:
   version "3.9.0"

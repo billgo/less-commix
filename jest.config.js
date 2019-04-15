@@ -10,7 +10,7 @@ module.exports = {
       '<rootDir>/mocks/fileMock.js',
     '\\.(css|less|scss)$': '<rootDir>/mocks/styleMock.js',
   },
-  testEnvironment: 'enzyme',
+  testEnvironment: 'node',
   testPathIgnorePatterns: [
     '<rootDir>/node_modules/',
     '<rootDir>/build/',
@@ -19,7 +19,6 @@ module.exports = {
     '<rootDir>/umd/',
   ],
   testRegex: '(/tests/.*|(\\.|/)(test|spec))\\.jsx?$',
-  unmockedModulePathPatterns: ['react', 'enzyme', 'jest-enzyme'],
   transform: {
     '^.+\\.js$': 'babel-jest',
   },

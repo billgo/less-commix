@@ -27,7 +27,7 @@
 .make-font-size();
 .make-font-size(@time: length(@size-name), @index: 1) when (@index =< @time) {
   @item: extract(@size-name, @index);
-  @name: ~'.font-@{item}';
+  @name: ~".font-@{item}";
   @{name} {
     font-size: extract(@font-size-list, @index);
     line-height: extract(@line-height-list, @index);

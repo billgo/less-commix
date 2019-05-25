@@ -1,0 +1,7 @@
+@import '../node_modules/less-palette/lib/index.less';
+@import '../src/variables/index.less';
+
+<% for (var i = 0; i < vars.length; i++) {%>
+  .<%= vars[i] %> {
+    color: @<%= vars[i] %>;
+  }<% } %>

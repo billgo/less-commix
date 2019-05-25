@@ -1,7 +1,7 @@
 {
   "name": "less-commix",
   "npmName": "lesscommix",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "author": "Billgo",
   "license": "MIT",
   "description": "less color commix",
@@ -23,8 +23,7 @@
     "test": "BABEL_ENV=test jest --no-cache && jest-coverage-badges --output ./static/badges"
   },
   "dependencies": {
-    "less-palette": "^0.0.3",
-    "less-variable": "^0.0.3"
+    "less-palette": "^0.1.0"
   },
   "devDependencies": {
     "autoprefixer": "^9.5.1",
@@ -37,10 +36,21 @@
     "eslint-plugin-babel": "^5.3.0",
     "eslint-plugin-prettier": "^3.1.0",
     "flow-bin": "^0.98.1",
+    "gulp": "^4.0.2",
+    "gulp-cli": "^2.2.0",
+    "gulp-connect": "^5.7.0",
+    "gulp-ejs": "^4.0.0",
+    "gulp-less": "^4.0.1",
+    "gulp-rename": "^1.4.0",
     "jest": "^24.8.0",
     "jest-cli": "^24.8.0",
     "jest-coverage-badges": "^1.1.2",
     "less": "^3.9.0",
+    "less-loader": "^5.0.0",
+    "less-plugin-autoprefix": "^2.0.0",
+    "less-plugin-functions": "^1.0.0",
+    "less-plugin-glob": "^3.0.0",
+    "less-plugin-inline-urls": "^1.2.0",
     "prettier": "^1.17.1",
     "prettier-eslint": "^8.8.2",
     "prettier-eslint-cli": "^4.7.1",

@@ -16,7 +16,7 @@ import pkg from './package.json';
 
 export default [
   {
-    input: 'source/index.js',
+    input: 'src/index.js',
     output: [
       {
         name: pkg.npmName,
@@ -44,7 +44,7 @@ export default [
       minify(),
       terser(),
       filesize(),
-      copy([{ files: 'source/**/*.{less,scss}', dest: 'lib' }], { verbose: true, watch: false }),
+      copy([{ files: 'src/**/*.{less,scss}', dest: 'lib' }], { verbose: true, watch: false }),
       cleanup(),
     ],
   },

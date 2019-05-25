@@ -9,10 +9,6 @@ lerna-debug.log*
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
-# Webpack reports
-reports/index.html
-reports/stats.json
-
 # Runtime data
 pids
 *.pid
@@ -88,3 +84,7 @@ typings/
 
 # MacOS files
 .DS_Store
+
+# images files
+
+public

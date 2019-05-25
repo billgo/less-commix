@@ -1,12 +1,13 @@
 # less-commix
 
-![statements](./reports/badge-statements.svg)
-![functions](./reports/badge-functions.svg)
-![branches](./reports/badge-branches.svg)
-![lines](./reports/badge-lines.svg)
+![statements](./static/badges/badge-statements.svg)
+![functions](./static/badges/badge-functions.svg)
+![branches](./static/badges/badge-branches.svg)
+![lines](./static/badges/badge-lines.svg)
 
-## How to use
+## Install
 
 ```
 $ npm i less-commix
+$ yarn add less-commix
 ```

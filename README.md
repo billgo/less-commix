@@ -9,5 +9,8 @@
 
 ```
 $ npm i less-commix
-$ yarn add less-commix
 ```
+
+## Contributors
+
+- [Billgo](https://github.com/billgo)

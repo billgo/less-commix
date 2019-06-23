@@ -1,4 +1,4 @@
-# less-commix
+# commix
 
 ![statements](./static/badges/badge-statements.svg)
 ![functions](./static/badges/badge-functions.svg)
@@ -10,7 +10,7 @@ commix is a comprehensive and flexible collection of LESS utilities. Its origina
 ## Install
 
 ```
-$ npm i less-commix
+$ npm i commix
 ```
 
 ## Thanks

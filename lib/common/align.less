@@ -49,13 +49,14 @@
 }
 .make-alignself();
 .make-alignself(@time: length(@breakpoint-list), @index: 1) when (@index =< @time) {
-  @breakpoint: extract(@breakpoint-name, @index);
-  @name1: ~".as-@{breakpoint}-auto";
-  @name2: ~".as-@{breakpoint}-start";
-  @name3: ~".as-@{breakpoint}-end";
-  @name4: ~".as-@{breakpoint}-center";
-  @name5: ~".as-@{breakpoint}-baseline";
-  @name6: ~".as-@{breakpoint}-stretch";
+  @breakpoint: extract(@breakpoint-names, @index);
+  @name1: ~'.as-@{breakpoint}-auto';
+  @name2: ~'.as-@{breakpoint}-start';
+  @name3: ~'.as-@{breakpoint}-end';
+  @name4: ~'.as-@{breakpoint}-center';
+  @name5: ~'.as-@{breakpoint}-baseline';
+  @name6: ~'.as-@{breakpoint}-stretch';
+
   @media (min-width: extract(@breakpoint-list, @index)) {
     @{name1} {
       align-self: auto !important;
@@ -97,12 +98,12 @@
 }
 .make-alignitems();
 .make-alignitems(@time: length(@breakpoint-list), @index: 1) when (@index =< @time) {
-  @breakpoint: extract(@breakpoint-name, @index);
-  @name1: ~".ai-@{breakpoint}-start";
-  @name2: ~".ai-@{breakpoint}-end";
-  @name3: ~".ai-@{breakpoint}-center";
-  @name4: ~".ai-@{breakpoint}-baseline";
-  @name5: ~".ai-@{breakpoint}-stretch";
+  @breakpoint: extract(@breakpoint-names, @index);
+  @name1: ~'.ai-@{breakpoint}-start';
+  @name2: ~'.ai-@{breakpoint}-end';
+  @name3: ~'.ai-@{breakpoint}-center';
+  @name4: ~'.ai-@{breakpoint}-baseline';
+  @name5: ~'.ai-@{breakpoint}-stretch';
   @media (min-width: extract(@breakpoint-list, @index)) {
     @{name1} {
       align-items: flex-start !important;
@@ -144,13 +145,13 @@
 }
 .make-aligncontent();
 .make-aligncontent(@time: length(@breakpoint-list), @index: 1) when (@index =< @time) {
-  @breakpoint: extract(@breakpoint-name, @index);
-  @name1: ~".ac-@{breakpoint}-start";
-  @name2: ~".ac-@{breakpoint}-end";
-  @name3: ~".ac-@{breakpoint}-center";
-  @name4: ~".ac-@{breakpoint}-between";
-  @name5: ~".ac-@{breakpoint}-around";
-  @name6: ~".ac-@{breakpoint}-stretch";
+  @breakpoint: extract(@breakpoint-names, @index);
+  @name1: ~'.ac-@{breakpoint}-start';
+  @name2: ~'.ac-@{breakpoint}-end';
+  @name3: ~'.ac-@{breakpoint}-center';
+  @name4: ~'.ac-@{breakpoint}-between';
+  @name5: ~'.ac-@{breakpoint}-around';
+  @name6: ~'.ac-@{breakpoint}-stretch';
   @media (min-width: extract(@breakpoint-list, @index)) {
     @{name1} {
       align-content: flex-start !important;
@@ -192,12 +193,12 @@
 }
 .make-justifycontent();
 .make-justifycontent(@time: length(@breakpoint-list), @index: 1) when (@index =< @time) {
-  @breakpoint: extract(@breakpoint-name, @index);
-  @name1: ~".jc-@{breakpoint}-start";
-  @name2: ~".jc-@{breakpoint}-end";
-  @name3: ~".jc-@{breakpoint}-center";
-  @name4: ~".jc-@{breakpoint}-between";
-  @name5: ~".jc-@{breakpoint}-around";
+  @breakpoint: extract(@breakpoint-names, @index);
+  @name1: ~'.jc-@{breakpoint}-start';
+  @name2: ~'.jc-@{breakpoint}-end';
+  @name3: ~'.jc-@{breakpoint}-center';
+  @name4: ~'.jc-@{breakpoint}-between';
+  @name5: ~'.jc-@{breakpoint}-around';
   @media (min-width: extract(@breakpoint-list, @index)) {
     @{name1} {
       justify-content: flex-start !important;

@@ -1,28 +1,54 @@
 /* screen */
-.screen-auto {
+.sr-auto {
   margin-left: auto;
   margin-right: auto;
   &:extend(.mixin-clearfix all);
-  .make-screen-auto();
+  .make-sr-auto();
 }
-.make-screen-auto();
-.make-screen-auto(@time: length(@breakpoint-list), @index: 1) when (@index =< @time) {
+.make-sr-auto();
+.make-sr-auto(@time: length(@breakpoint-list), @index: 1) when (@index =< @time) {
   @media (min-width: extract(@breakpoint-list, @index)) {
-    max-width: extract(@screen-size-list, @index);
+    max-width: extract(@screen-list, @index);
   }
-  .make-screen-auto(@time, (@index + 1));
+  .make-sr-auto(@time, (@index + 1));
 }
 
-.make-screen-size();
-.make-screen-size(@time: length(@breakpoint-name), @index: 1) when (@index =< @time) {
-  @size: extract(@breakpoint-name, @index);
-  @name: ~'.screen-@{size}';
+.make-sr-size();
+.make-sr-size(@time: length(@breakpoint-names), @index: 1) when (@index =< @time) {
+  @size: extract(@breakpoint-names, @index);
+  @name: ~'.sr-@{size}';
   &@{name} {
     padding: @grid-gutters / 2;
     margin-left: auto;
     margin-right: auto;
-    max-width: extract(@screen-size-list, @index);
+    max-width: extract(@screen-list, @index);
     &:extend(.mixin-clearfix all);
   }
-  .make-screen-size(@time, (@index + 1));
+  .make-sr-size(@time, (@index + 1));
+}
+
+/* screen reader */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+  border: 0;
+}
+
+.sr-only-focusable {
+  &:active,
+  &:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+    clip-path: none;
+  }
 }

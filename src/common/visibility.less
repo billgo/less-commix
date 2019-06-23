@@ -1,0 +1,34 @@
+.vi-full {
+  .mixin-visibility();
+}
+
+.hi-full {
+  .mixin-invisibility();
+}
+
+.make-invisibility();
+.make-invisibility(@time: length(@breakpoint-list), @index: 1) when (@index =< @time) {
+  @breakpoint: extract(@breakpoint-names, @index);
+
+  @name1: ~'.hi-@{breakpoint}-up';
+  @name2: ~'.hi-@{breakpoint}-down';
+  @name3: ~'.hi-@{breakpoint}';
+
+  @media (min-width: extract(@breakpoint-min-list, @index)) {
+    @{name1} {
+      .mixin-invisibility();
+    }
+  }
+  @media (max-width: extract(@breakpoint-max-list, @index)) {
+    @{name2} {
+      .mixin-invisibility();
+    }
+  }
+  @media (min-width: extract(@breakpoint-min-list, @index)) and (max-width: extract(@breakpoint-max-list, @index)) {
+    @{name3} {
+      .mixin-invisibility();
+    }
+  }
+
+  .make-invisibility(@time, (@index + 1));
+}

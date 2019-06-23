@@ -1,9 +1,0 @@
-.mixin-for(@i, @n) {.-each(@i)}
-.mixin-for(@n)     when (isnumber(@n)) {.mixin-for(1, @n)}
-.mixin-for(@i, @n) when not (@i = @n)  {
-  .mixin-for((@i + (@n - @i) / abs(@n - @i)), @n);
-}
-
-.mixin-for(@array)   when (default()) {.mixin-for-impl_(length(@array))}
-.mixin-for-impl_(@i) when (@i > 1)    {.mixin-for-impl_((@i - 1))}
-.mixin-for-impl_(@i) when (@i > 0)    {.-each(extract(@array, @i))}

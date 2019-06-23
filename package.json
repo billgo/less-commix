@@ -1,45 +1,41 @@
 {
-  "name": "less-commix",
-  "npmName": "lesscommix",
+  "name": "commix",
+  "npmName": "commix",
   "version": "0.1.0",
   "author": "Billgo",
   "license": "MIT",
   "description": "less color commix",
-  "homepage": "https://billgo.github.io/less-commix",
+  "homepage": "https://commix.yiqilai.tech",
   "main": "lib/commix.js",
   "style": "lib/commix.css",
   "directories": {
     "lib": "lib"
   },
   "files": [
-    "lib"
+    "lib",
+    "index.less"
   ],
   "scripts": {
-    "prepare": "npm run test && npm run build:prod && npm run compile",
-    "compile": "babel src --out-dir lib --ignore 'src/**/*.test.js'",
-    "build": "rimraf lib && mkdir lib && rollup -c",
-    "build:prod": "BABEL_ENV=production npm run build",
+    "prepare": "npm run test && gulp default && npm run build",
+    "build": "rimraf lib && mkdir lib && BABEL_ENV=production rollup -c",
     "lint": "prettier-eslint --write src/**/*.{js,jsx}",
-    "test": "BABEL_ENV=test jest --no-cache && jest-coverage-badges --output ./static/badges"
-  },
-  "dependencies": {
-    "less-palette": "^0.1.0"
+    "test": "BABEL_ENV=test jest --no-cache && jest-coverage-badges --output ./coverage"
   },
   "devDependencies": {
-    "autoprefixer": "^9.5.1",
-    "babel-eslint": "^10.0.1",
+    "autoprefixer": "^9.6.0",
+    "babel-eslint": "^10.0.2",
     "babel-jest": "^24.8.0",
     "babel-loader": "^8.0.6",
-    "babel-preset-common": "^0.2.0",
-    "eslint": "^5.16.0",
-    "eslint-config-prettier": "^4.3.0",
+    "babel-preset-common": "^0.2.2",
+    "eslint": "^6.0.0",
+    "eslint-config-prettier": "^5.0.0",
     "eslint-plugin-babel": "^5.3.0",
     "eslint-plugin-prettier": "^3.1.0",
-    "flow-bin": "^0.98.1",
+    "flow-bin": "^0.101.1",
     "gulp": "^4.0.2",
     "gulp-cli": "^2.2.0",
     "gulp-connect": "^5.7.0",
-    "gulp-ejs": "^4.0.0",
+    "gulp-ejs": "^4.1.1",
     "gulp-less": "^4.0.1",
     "gulp-rename": "^1.4.0",
     "jest": "^24.8.0",
@@ -51,12 +47,12 @@
     "less-plugin-functions": "^1.0.0",
     "less-plugin-glob": "^3.0.0",
     "less-plugin-inline-urls": "^1.2.0",
-    "prettier": "^1.17.1",
-    "prettier-eslint": "^8.8.2",
-    "prettier-eslint-cli": "^4.7.1",
+    "prettier": "^1.18.2",
+    "prettier-eslint": "^9.0.0",
+    "prettier-eslint-cli": "^5.0.0",
     "prettier-stylelint": "^0.4.2",
     "rimraf": "^2.6.3",
-    "rollup": "^1.12.3",
+    "rollup": "^1.16.1",
     "rollup-plugin-auto-named-exports": "^1.0.0-beta.3",
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-babel-minify": "^8.0.0",
@@ -64,15 +60,15 @@
     "rollup-plugin-commonjs": "^10.0.0",
     "rollup-plugin-copy-glob": "^0.3.0",
     "rollup-plugin-eslint": "^6.0.0",
-    "rollup-plugin-filesize": "^6.1.0",
+    "rollup-plugin-filesize": "^6.1.1",
     "rollup-plugin-lessimporter": "^0.1.0",
     "rollup-plugin-local-resolve": "^1.0.7",
-    "rollup-plugin-node-resolve": "^5.0.0",
+    "rollup-plugin-node-resolve": "^5.0.4",
     "rollup-plugin-peer-deps-external": "^2.2.0",
     "rollup-plugin-postcss": "^2.0.3",
     "rollup-plugin-terser": "^5.0.0",
-    "rollup-plugin-url": "^2.2.1",
-    "stylelint": "^10.0.1",
+    "rollup-plugin-url": "^2.2.2",
+    "stylelint": "^10.1.0",
     "stylelint-config-prettier": "^5.2.0"
   },
   "babel": {
@@ -133,6 +129,7 @@
       ],
       "block-no-empty": null,
       "unit-whitelist": [
+        "%",
         "px",
         "em",
         "rem",
@@ -140,15 +137,9 @@
       ]
     }
   },
-  "browserslist": [
-    "last 1 version",
-    "> 1%",
-    "maintained node versions",
-    "not dead"
-  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/billgo/less-commix.git"
+    "url": "https://github.com/billgo/commix.git"
   },
-  "bugs": "https://github.com/billgo/less-commix/issues"
+  "bugs": "https://github.com/billgo/commix/issues"
 }

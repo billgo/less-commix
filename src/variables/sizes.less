@@ -1,22 +1,12 @@
 /* unit */
-@rem-unit : .0625rem; // 1px
-@rem-unit-2 : @rem-unit * 2; // 2px
-@rem-unit-5 : @rem-unit * 5; // 5px
-@rem-unit-10 : @rem-unit * 10; // 10px
+@rem-unit1 : .0625rem; // 1px
+@rem-unit2 : @rem-unit1 * 2; // 2px
+@rem-unit5 : @rem-unit1 * 5; // 5px
+@rem-unit10 : @rem-unit1 * 10; // 10px
 
 /* grid */
 @grid-columns : 24;
-@grid-gutters : @rem-unit * 16;
-
-/* screen */
-@screen-size-xxs : 19.875rem; // 318px
-@screen-size-xs : 33.75rem; // 540px
-@screen-size-sm : 48rem; // 768px
-@screen-size-md : 58.125rem; // 930px
-@screen-size-lg : 66rem; // 1056px
-@screen-size-xl : 80rem; // 1280px
-@screen-size-xxl : 90rem; // 1440px
-@screen-size-list : @screen-size-xxs, @screen-size-xs, @screen-size-sm, @screen-size-md, @screen-size-lg, @screen-size-xl, @screen-size-xxl;
+@grid-gutters : @rem-unit1 * 16;
 
 /* breakpoint */
 @breakpoint-xxs : 320px; // iphone 5s
@@ -27,87 +17,98 @@
 @breakpoint-xl : 1280px; // macbook 13
 @breakpoint-xxl : 1440px; // macbook 15
 @breakpoint-list : @breakpoint-xxs, @breakpoint-xs, @breakpoint-sm, @breakpoint-md, @breakpoint-lg, @breakpoint-xl, @breakpoint-xxl;
-@breakpoint-xxs-min : @breakpoint-xxs;
-@breakpoint-xs-min : @breakpoint-xs;
-@breakpoint-sm-min : @breakpoint-sm;
-@breakpoint-md-min : @breakpoint-md;
-@breakpoint-lg-min : @breakpoint-lg;
-@breakpoint-xl-min : @breakpoint-xl;
-@breakpoint-xxl-min : @breakpoint-xxl;
-@breakpoint-min-list : @breakpoint-xxs-min, @breakpoint-xs-min, @breakpoint-sm-min, @breakpoint-md-min, @breakpoint-lg-min, @breakpoint-xl-min, @breakpoint-xxl-min;
-@breakpoint-xxs-max : (@breakpoint-xs - 1);
-@breakpoint-xs-max : (@breakpoint-sm - 1);
-@breakpoint-sm-max : (@breakpoint-md - 1);
-@breakpoint-md-max : (@breakpoint-lg - 1);
-@breakpoint-lg-max : (@breakpoint-xl - 1);
-@breakpoint-xl-max : (@breakpoint-xxl - 1);
-@breakpoint-xxl-max : 999999px;
-@breakpoint-max-list : @breakpoint-xxs-max, @breakpoint-xs-max, @breakpoint-sm-max, @breakpoint-md-max, @breakpoint-lg-max, @breakpoint-xl-max, @breakpoint-xxl-max;
+@breakpoint-min-xxs : @breakpoint-xxs;
+@breakpoint-min-xs : @breakpoint-xs;
+@breakpoint-min-sm : @breakpoint-sm;
+@breakpoint-min-md : @breakpoint-md;
+@breakpoint-min-lg : @breakpoint-lg;
+@breakpoint-min-xl : @breakpoint-xl;
+@breakpoint-min-xxl : @breakpoint-xxl;
+@breakpoint-min-list : @breakpoint-min-xxs, @breakpoint-min-xs, @breakpoint-min-sm, @breakpoint-min-md, @breakpoint-min-lg, @breakpoint-min-xl, @breakpoint-min-xxl;
+@breakpoint-max-xxs : (@breakpoint-xs - 1);
+@breakpoint-max-xs : (@breakpoint-sm - 1);
+@breakpoint-max-sm : (@breakpoint-md - 1);
+@breakpoint-max-md : (@breakpoint-lg - 1);
+@breakpoint-max-lg : (@breakpoint-xl - 1);
+@breakpoint-max-xl : (@breakpoint-xxl - 1);
+@breakpoint-max-xxl : 999999px;
+@breakpoint-max-list : @breakpoint-max-xxs, @breakpoint-max-xs, @breakpoint-max-sm, @breakpoint-max-md, @breakpoint-max-lg, @breakpoint-max-xl, @breakpoint-max-xxl;
+
+/* screen */
+@screen-xxs : 19.875rem; // 318px
+@screen-xs : 33.75rem; // 540px
+@screen-sm : 48rem; // 768px
+@screen-md : 58.125rem; // 930px
+@screen-lg : 66rem; // 1056px
+@screen-xl : 80rem; // 1280px
+@screen-xxl : 90rem; // 1440px
+@screen-list : @screen-xxs, @screen-xs, @screen-sm, @screen-md, @screen-lg, @screen-xl, @screen-xxl;
 
 /* radius size */
-@radius-size-tiny : .1875rem; // 2px
-@radius-size-mini : .375rem; // 5px
-@radius-size-small : .5rem; // 6px
-@radius-size-medium : .625rem; // 8px
-@radius-size-large : .75rem; // 12px
-@radius-size-huge : .875rem; // 14px
-@radius-size-wide : 1rem; // 16px
-@radius-size-list : @radius-size-tiny, @radius-size-mini, @radius-size-small, @radius-size-medium, @radius-size-large, @radius-size-huge, @radius-size-wide;
-
-/* target size */
-@target-size-tiny : 1.75rem; // 28px = element medium
-@target-size-mini : 3rem; // 48px
-@target-size-small : 4rem; // 64px
-@target-size-medium : 6rem; // 96px
-@target-size-large : 8rem; // 128px
-@target-size-huge : 10rem; // 160px
-@target-size-wide : 16rem; // 256px
-@target-size-list : @target-size-tiny, @target-size-mini, @target-size-small, @target-size-medium, @target-size-large, @target-size-huge, @target-size-wide;
-
-/* element size */
-@element-size-tiny : @font-size-tiny + @padding-y-size-tiny * 2; // 48px
-@element-size-mini : @font-size-mini + @padding-y-size-mini * 2; // 48px
-@element-size-small : @font-size-small + @padding-y-size-small * 2; // 48px
-@element-size-medium : @font-size-medium + @padding-y-size-medium * 2; // 48px
-@element-size-large : @font-size-large + @padding-y-size-large * 2; // 48px
-@element-size-huge : @font-size-huge + @padding-y-size-huge * 2; // 48px
-@element-size-wide : @font-size-wide + @padding-y-size-wide * 2; // 48px
-@element-size-list : @element-size-tiny, @element-size-mini, @element-size-small, @element-size-medium, @element-size-large, @element-size-huge, @element-size-wide;
+@radius-tiny : .1875rem; // 2px
+@radius-mini : .375rem; // 5px
+@radius-small : .5rem; // 6px
+@radius-medium : .625rem; // 8px
+@radius-large : .75rem; // 12px
+@radius-huge : .875rem; // 14px
+@radius-wide : 1rem; // 16px
+@radius-list : @radius-tiny, @radius-mini, @radius-small, @radius-medium, @radius-large, @radius-huge, @radius-wide;
 
 /* padding size */
-@padding-y-size-tiny : @rem-unit * 2;
-@padding-y-size-mini : @rem-unit * 4;
-@padding-y-size-small : @rem-unit * 6;
-@padding-y-size-medium : @rem-unit * 8;
-@padding-y-size-large :@rem-unit * 10;
-@padding-y-size-huge : @rem-unit * 12;
-@padding-y-size-wide : @rem-unit * 14;
-@padding-y-size-list : @padding-y-size-tiny, @padding-y-size-mini, @padding-y-size-small, @padding-y-size-medium, @padding-y-size-large, @padding-y-size-huge, @padding-y-size-wide;
+@padding-y-tiny : @rem-unit1 * 2;
+@padding-y-mini : @rem-unit1 * 4;
+@padding-y-small : @rem-unit1 * 6;
+@padding-y-medium : @rem-unit1 * 8;
+@padding-y-large :@rem-unit1 * 10;
+@padding-y-huge : @rem-unit1 * 12;
+@padding-y-wide : @rem-unit1 * 14;
+@padding-y-list : @padding-y-tiny, @padding-y-mini, @padding-y-small, @padding-y-medium, @padding-y-large, @padding-y-huge, @padding-y-wide;
 
-@padding-x-size-tiny : @rem-unit * 4;
-@padding-x-size-mini : @rem-unit * 6;
-@padding-x-size-small : @rem-unit * 8;
-@padding-x-size-medium : @rem-unit * 10;
-@padding-x-size-large : @rem-unit * 12;
-@padding-x-size-huge : @rem-unit * 14;
-@padding-x-size-wide : @rem-unit * 16;
-@padding-x-size-list : @padding-x-size-tiny, @padding-x-size-mini, @padding-x-size-small, @padding-x-size-medium, @padding-x-size-large, @padding-x-size-huge, @padding-x-size-wide;
+@padding-x-tiny : @rem-unit1 * 4;
+@padding-x-mini : @rem-unit1 * 6;
+@padding-x-small : @rem-unit1 * 8;
+@padding-x-medium : @rem-unit1 * 10;
+@padding-x-large : @rem-unit1 * 12;
+@padding-x-huge : @rem-unit1 * 14;
+@padding-x-wide : @rem-unit1 * 16;
+@padding-x-list : @padding-x-tiny, @padding-x-mini, @padding-x-small, @padding-x-medium, @padding-x-large, @padding-x-huge, @padding-x-wide;
 
 /* margin size */
-@margin-y-size-tiny : .125rem; // 1px
-@margin-y-size-mini : .1875rem; // 2px
-@margin-y-size-small : .3125rem; // 3px
-@margin-y-size-medium : .375rem; // 5px
-@margin-y-size-large : .5rem; // 6px
-@margin-y-size-huge : .625rem; // 10px
-@margin-y-size-wide : .75rem; // 12px
-@margin-y-size-list : @margin-y-size-tiny, @margin-y-size-mini, @margin-y-size-small, @margin-y-size-medium, @margin-y-size-large, @margin-y-size-huge, @margin-y-size-wide;
+@margin-y-tiny : .125rem; // 1px
+@margin-y-mini : .1875rem; // 2px
+@margin-y-small : .3125rem; // 3px
+@margin-y-medium : .375rem; // 5px
+@margin-y-large : .5rem; // 6px
+@margin-y-huge : .625rem; // 10px
+@margin-y-wide : .75rem; // 12px
+@margin-y-list : @margin-y-tiny, @margin-y-mini, @margin-y-small, @margin-y-medium, @margin-y-large, @margin-y-huge, @margin-y-wide;
 
-@margin-x-size-tiny : .125rem; // 1px
-@margin-x-size-mini : .1875rem; // 2px
-@margin-x-size-small : .3125rem; // 3px
-@margin-x-size-medium : .375rem; // 5px
-@margin-x-size-large : .5rem; // 6px
-@margin-x-size-huge : .625rem; // 10px
-@margin-x-size-wide : .75rem; // 12px
-@margin-x-size-list : @margin-x-size-tiny, @margin-x-size-mini, @margin-x-size-small, @margin-x-size-medium, @margin-x-size-large, @margin-x-size-huge, @margin-x-size-wide;
+@margin-x-tiny : .125rem; // 1px
+@margin-x-mini : .1875rem; // 2px
+@margin-x-small : .3125rem; // 3px
+@margin-x-medium : .375rem; // 5px
+@margin-x-large : .5rem; // 6px
+@margin-x-huge : .625rem; // 10px
+@margin-x-wide : .75rem; // 12px
+@margin-x-list : @margin-x-tiny, @margin-x-mini, @margin-x-small, @margin-x-medium, @margin-x-large, @margin-x-huge, @margin-x-wide;
+
+/* element size */
+@element-tiny : @font-size-tiny + @padding-y-tiny * 2; // 48px
+@element-mini : @font-size-mini + @padding-y-mini * 2; // 48px
+@element-small : @font-size-small + @padding-y-small * 2; // 48px
+@element-medium : @font-size-medium + @padding-y-medium * 2; // 48px
+@element-large : @font-size-large + @padding-y-large * 2; // 48px
+@element-huge : @font-size-huge + @padding-y-huge * 2; // 48px
+@element-wide : @font-size-wide + @padding-y-wide * 2; // 48px
+@element-list : @element-tiny, @element-mini, @element-small, @element-medium, @element-large, @element-huge, @element-wide;
+
+/* target size */
+@target-tiny : 1.75rem; // 28px = element medium
+@target-mini : 3rem; // 48px
+@target-small : 4rem; // 64px
+@target-medium : 6rem; // 96px
+@target-large : 8rem; // 128px
+@target-huge : 10rem; // 160px
+@target-wide : 16rem; // 256px
+@target-list : @target-tiny, @target-mini, @target-small, @target-medium, @target-large, @target-huge, @target-wide;
+

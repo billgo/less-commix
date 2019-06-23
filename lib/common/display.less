@@ -37,7 +37,7 @@
 
 .make-display();
 .make-display(@time: length(@breakpoint-list), @index: 1) when (@index =< @time) {
-  @breakpoint: extract(@breakpoint-name, @index);
+  @breakpoint: extract(@breakpoint-names, @index);
 
   @name1: ~'.ds-@{breakpoint}-inline';
   @name2: ~'.ds-@{breakpoint}-inline-block';
@@ -103,12 +103,12 @@
 
 /* dimension length */
 .make-length-size();
-.make-length-size(@time: length(@size-name), @index: 1) when (@index =< @time) {
-  @item: extract(@size-name, @index);
+.make-length-size(@time: length(@size-names), @index: 1) when (@index =< @time) {
+  @item: extract(@size-names, @index);
   @name1: ~'.dl-t-@{item}';
   @{name1} {
-    flex: 0 0 extract(@target-size-list, @index);
-    max-width: extract(@target-size-list, @index);
+    flex: 0 0 extract(@target-list, @index);
+    max-width: extract(@target-list, @index);
   }
   .make-length-size(@time, (@index + 1));
 }
@@ -134,24 +134,24 @@
   max-width: 25%;
 }
 .make-width-size();
-.make-width-size(@time: length(@size-name), @index: 1) when (@index =< @time) {
-  @item: extract(@size-name, @index);
+.make-width-size(@time: length(@size-names), @index: 1) when (@index =< @time) {
+  @item: extract(@size-names, @index);
   @name1: ~'.dw-t-@{item}';
   @name2: ~'.dw-e-@{item}';
   @name3: ~'.dw-e-@{item}-2x';
   @{name1} {
-    width: extract(@target-size-list, @index);
-    max-width: extract(@target-size-list, @index);
+    width: extract(@target-list, @index);
+    max-width: extract(@target-list, @index);
     overflow-x: hidden;
   }
   @{name2} {
-    width: extract(@element-size-list, @index) + @rem-unit-2;
-    max-width: extract(@element-size-list, @index) + @rem-unit-2;
+    width: extract(@element-list, @index) + @rem-unit2;
+    max-width: extract(@element-list, @index) + @rem-unit2;
     overflow-x: hidden;
   }
   @{name3} {
-    width: extract(@element-size-list, @index) * 2 + @rem-unit-2;
-    max-width: extract(@element-size-list, @index) * 2 + @rem-unit-2;
+    width: extract(@element-list, @index) * 2 + @rem-unit2;
+    max-width: extract(@element-list, @index) * 2 + @rem-unit2;
     overflow-x: hidden;
   }
   .make-width-size(@time, (@index + 1));
@@ -181,15 +181,15 @@
   max-height: 25%;
 }
 .make-height-size();
-.make-height-size(@time: length(@size-name), @index: 1) when (@index =< @time) {
-  @item: extract(@size-name, @index);
+.make-height-size(@time: length(@size-names), @index: 1) when (@index =< @time) {
+  @item: extract(@size-names, @index);
   @name1: ~'.dh-t-@{item}';
   @name2: ~'.dh-e-@{item}';
   @{name1} {
-    height: extract(@target-size-list, @index) + @rem-unit-2;
+    height: extract(@target-list, @index) + @rem-unit2;
   }
   @{name2} {
-    height: extract(@element-size-list, @index) + @rem-unit-2;
+    height: extract(@element-list, @index) + @rem-unit2;
   }
   .make-height-size(@time, (@index + 1));
 }

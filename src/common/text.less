@@ -9,10 +9,10 @@
   text-transform: capitalize !important;
 }
 .text-overflow {
-  .mixin-text-overflow();
+  .mixin-textoverflow();
 }
 .text-hidden {
-  .mixin-text-hide();
+  .mixin-texthide();
 }
 
 /* text alignment */
@@ -34,7 +34,7 @@
 
 .make-responsive-text();
 .make-responsive-text(@time: length(@breakpoint-list), @index: 1) when (@index =< @time) {
-  @breakpoint: extract(@breakpoint-name, @index);
+  @breakpoint: extract(@breakpoint-names, @index);
   @name1: ~'.text-@{breakpoint}-left';
   @name2: ~'.text-@{breakpoint}-right';
   @name3: ~'.text-@{breakpoint}-center';

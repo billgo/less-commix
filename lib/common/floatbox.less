@@ -1,0 +1,35 @@
+/* floatbox */
+.fb {
+  display: block;
+  .mixin-clearfix();
+}
+
+.fb-left {
+  float: left !important;
+}
+.fb-right {
+  float: right !important;
+}
+.fb-none {
+  float: none !important;
+}
+
+.make-floatbox();
+.make-floatbox(@time: length(@breakpoint-list), @index: 1) when (@index =< @time) {
+  @breakpoint: extract(@breakpoint-names, @index);
+  @name1: ~'.fb-@{breakpoint}-left';
+  @name2: ~'.fb-@{breakpoint}-right';
+  @name3: ~'.fb-@{breakpoint}-none';
+  @media (min-width: extract(@breakpoint-list, @index)) {
+    @{name1} {
+      float: left !important;
+    }
+    @{name2} {
+      float: right !important;
+    }
+    @{name3} {
+      float: none !important;
+    }
+  }
+  .make-floatbox(@time, (@index + 1));
+}

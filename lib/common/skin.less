@@ -18,60 +18,9 @@
   }
 }
 
-/* brand */
-.make-brand();
-.make-brand(@time: length(@brand-name), @index: 1) when (@index =< @time) {
-  @item: extract(@brand-name, @index);
-
-  @name1: ~'.skin-@{item},.skin-x-@{item}';
-  @name2: ~'.skin-x-@{item}';
-  @name3: ~'.skin-o-@{item}';
-  @name4: ~'.skin-@{item} > .is-transparent,.skin-x-@{item} > .is-transparent,.skin-o-@{item} > .is-transparent';
-
-  @{name1} {
-    color: @color-default-0;
-    border: 1px solid extract(@brand-color-list-6, @index);
-    background-color: extract(@brand-color-list-5, @index);
-    > .is-transparent {
-      border-color: extract(@brand-color-list-6, @index);
-    }
-  }
-  @{name2} {
-    &:hover {
-      background-color: extract(@brand-color-list-4, @index);
-    }
-    &:active,
-    &.is-active {
-      border: 1px solid extract(@brand-color-list-7, @index);
-      background-color: extract(@brand-color-list-6, @index);
-    }
-  }
-  @{name3} {
-    color: extract(@brand-color-list-5, @index);
-    background-color: @color-white;
-    border: 1px solid extract(@brand-color-list-6, @index);
-    &:hover {
-      background-color: extract(@brand-color-list-1, @index);
-    }
-    &:active,
-    &.is-active {
-      background-color: extract(@brand-color-list-5, @index);
-      color: @color-white;
-    }
-    > .is-transparent {
-      border-color: extract(@brand-color-list-6, @index);
-    }
-  }
-  @{name4} {
-    border-color: extract(@brand-color-list-6, @index);
-  }
-  .make-brand(@time, (@index + 1));
-}
-
-/* theme */
 .make-skin();
-.make-skin(@time: length(@skin-name), @index: 1) when (@index =< @time) {
-  @item: extract(@skin-name, @index);
+.make-skin(@time: length(@skin-names), @index: 1) when (@index =< @time) {
+  @item: extract(@skin-names, @index);
 
   @name1: ~'.skin-@{item},.skin-x-@{item}';
   @name2: ~'.skin-x-@{item}';
@@ -79,38 +28,38 @@
   @name4: ~'.skin-@{item} > .is-transparent,.skin-x-@{item} > .is-transparent,.skin-o-@{item} > .is-transparent';
 
   @{name1} {
-    color: @color-default-0;
-    border: 1px solid extract(@skin-color-list-6, @index);
-    background-color: extract(@skin-color-list-5, @index);
+    color: @color-default0;
+    border: 1px solid extract(@color-list6, @index);
+    background-color: extract(@color-list5, @index);
   }
   @{name2} {
     &:hover {
-      background-color: extract(@skin-color-list-4, @index);
+      background-color: extract(@color-list4, @index);
     }
     &:active,
     &.is-active {
-      border: 1px solid extract(@skin-color-list-7, @index);
-      background-color: extract(@skin-color-list-6, @index);
+      border: 1px solid extract(@color-list7, @index);
+      background-color: extract(@color-list6, @index);
     }
   }
   @{name3} {
-    color: extract(@skin-color-list-5, @index);
+    color: extract(@color-list5, @index);
     background-color: @color-white;
-    border: 1px solid extract(@skin-color-list-6, @index);
+    border: 1px solid extract(@color-list6, @index);
     &:hover {
-      background-color: extract(@skin-color-list-1, @index);
+      background-color: extract(@color-list1, @index);
     }
     &:active,
     &.is-active {
-      background-color: extract(@skin-color-list-5, @index);
+      background-color: extract(@color-list5, @index);
       color: @color-white;
     }
     > .is-transparent {
-      border-color: extract(@skin-color-list-6, @index);
+      border-color: extract(@color-list6, @index);
     }
   }
   @{name4} {
-    border-color: extract(@skin-color-list-6, @index);
+    border-color: extract(@color-list6, @index);
   }
   .make-skin(@time, (@index + 1));
 }

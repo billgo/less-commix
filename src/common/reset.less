@@ -22,18 +22,18 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: @color-default-2;
+  background: @color-default2;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: @color-primary-1;
+  background: @color-primary1;
   border-radius: 4px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: @color-primary-2;
+  background: @color-primary2;
 }
 
 html {
@@ -226,7 +226,7 @@ table {
 }
 
 caption {
-  color: @color-dark-heading;
+  color: fade(#fff, 100%);
   caption-side: bottom;
 }
 
@@ -314,12 +314,12 @@ textarea,
   background-clip: padding-box;
   border: 1px solid @color-border;
   &:hover {
-    border-color: @color-primary-3;
+    border-color: @color-primary3;
   }
   &:focus,
   &:active,
   &.is-active {
-    border-color: @color-primary-4;
+    border-color: @color-primary4;
   }
   &::-ms-expand {
     background-color: transparent;
@@ -327,13 +327,13 @@ textarea,
   }
   &::placeholder {
     opacity: 1;
-    color: @color-default-4;
+    color: @color-default4;
   }
   &:disabled,
   &[readonly],
   &.is-disabled {
     border-color: @color-border;
-    background-color: @color-default-3;
+    background-color: @color-default3;
     opacity: 1;
     cursor: not-allowed;
   }
@@ -402,7 +402,7 @@ template {
 
 b,
 strong {
-  font-weight: @font-weight-semibold;
+  font-weight: @font-weight-bold;
 }
 
 sub,
@@ -474,8 +474,8 @@ blockquote {
   padding-top: 0.3125rem;
   padding-bottom: 0.3125rem;
   padding-left: 1rem;
-  color: @color-text-secondary;
-  border-left: 4px solid @color-primary-3;
+  color: fade(#000, 45%);
+  border-left: 4px solid @color-primary3;
 }
 
 pre {
@@ -490,3 +490,46 @@ pre {
 [tabindex='-1']:focus {
   outline: none !important;
 }
+
+article {
+  font-family: @font-family-serif;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: @font-weight-bold;
+  }
+
+  p {
+    line-height: @line-height-standard;
+  }
+
+  p,
+  pre,
+  ul,
+  ol,
+  dl,
+  form,
+  hr,
+  table,
+  blockquote {
+    margin-bottom: 1em;
+  }
+
+  ul,
+  ol {
+    padding-left: 1.25em;
+  }
+
+  li > p {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: @breakpoint-sm) {
+    font-size: @font-size-small;
+  }
+}
+

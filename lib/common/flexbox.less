@@ -26,7 +26,7 @@
 }
 .make-flex-direction();
 .make-flex-direction(@time: length(@breakpoint-list), @index: 1) when (@index =< @time) {
-  @breakpoint: extract(@breakpoint-name, @index);
+  @breakpoint: extract(@breakpoint-names, @index);
   @name1: ~'.flex-@{breakpoint}-row';
   @name2: ~'.flex-@{breakpoint}-row-reverse';
   @name3: ~'.flex-@{breakpoint}-column';
@@ -60,7 +60,7 @@
 }
 .make-flex-newline();
 .make-flex-newline(@time: length(@breakpoint-list), @index: 1) when (@index =< @time) {
-  @breakpoint: extract(@breakpoint-name, @index);
+  @breakpoint: extract(@breakpoint-names, @index);
   @name1: ~'.flex-@{breakpoint}-wrap';
   @name2: ~'.flex-@{breakpoint}-nowrap';
   @name3: ~'.flex-@{breakpoint}-reverse';
@@ -90,7 +90,7 @@
 }
 .make-flex-order();
 .make-flex-order(@time: length(@breakpoint-list), @index: 1) when (@index =< @time) {
-  @breakpoint: extract(@breakpoint-name, @index);
+  @breakpoint: extract(@breakpoint-names, @index);
   @name1: ~'.flex-@{breakpoint}-order-first';
   @name2: ~'.flex-@{breakpoint}-order-last';
   @name3: ~'.flex-@{breakpoint}-order-none';

@@ -1,4 +1,4 @@
-import './index.less';
+import "./index.less";
 
 export default {
   "@color-default": "#8C9bA5",
@@ -183,16 +183,26 @@ export default {
   "@color-purple7": "#302992",
   "@color-purple8": "#2b2176",
   "@color-purple9": "#25195a",
-  "@color-list0": "#fcf0f1, #eeeff0, #f5f5f5, #fef0ef, #fffaeb, #ebf8f2, #ecf6fd, #fff0ef, #ebf5ff, #f2fbff, #f1fcf3, #fff7eb, #fffbeb, #f0effb",
-  "@color-list1": "#f8dbde, #d7d8db, #e6e6e7, #fcdbd9, #fff3cf, #cfefdf, #d2eafb, #ffdad8, #cfe6ff, #e0f5fe, #ddf8e2, #ffebcf, #fff5cf, #dad9f5",
-  "@color-list2": "#f2bec3, #b7b9bd, #d2d2d3, #fabeb9, #ffe9a7, #a7e1c4, #add8f7, #ffbcb8, #a7d1ff, #c6ecfd, #c1f2ca, #ffdba7, #ffeda7, #bcbbec",
-  "@color-list3": "#ea99a1, #8e9198, #b8b8ba, #f79992, #ffdd76, #76d0a3, #7ec2f3, #ff9590, #76b7ff, #a6e1fc, #9febac, #ffc676, #ffe476, #9594e1",
-  "@color-list4": "#e16f7b, #5f646d, #9b9b9d, #f46e65, #ffce3d, #3dbd7d, #49a9ee, #ff6a62, #3d9aff, #81d5fb, #77e289, #ffae3d, #ffd83d, #6a68d5",
-  "@color-list5": "#d84251, #2d333f, #7b7c7e, #f04134, #ffbf00, #00a854, #108ee9, #ff3b30, #007aff, #5ac8fa, #4cd964, #ff9500, #ffcc00, #3b38c8",
-  "@color-list6": "#c0384f, #272c37, #6b6c6d, #d73435, #e09a00, #00924c, #0e77ca, #e62d32, #0065dd, #45abe1, #3fbf58, #e07500, #e0a600, #3630ad",
-  "@color-list7": "#a72d4e, #21252e, #5a5b5c, #bd2636, #c17500, #007b43, #0c60aa, #cc1e35, #0050ba, #308dc8, #32a44c, #c15500, #c17f00, #302992",
-  "@color-list8": "#8e234c, #1a1d25, #48494b, #a31837, #a04f00, #00643b, #09488a, #b20f37, #003a97, #1b6eae, #258940, #a03400, #a05700, #2b2176",
-  "@color-list9": "#75184a, #14161c, #373839, #880a38, #802800, #004c32, #073069, #97003a, #002473, #054f94, #176d34, #801300, #802f00, #25195a",
+  "@color-list0":
+    "#fcf0f1, #eeeff0, #f5f5f5, #fef0ef, #fffaeb, #ebf8f2, #ecf6fd, #fff0ef, #ebf5ff, #f2fbff, #f1fcf3, #fff7eb, #fffbeb, #f0effb",
+  "@color-list1":
+    "#f8dbde, #d7d8db, #e6e6e7, #fcdbd9, #fff3cf, #cfefdf, #d2eafb, #ffdad8, #cfe6ff, #e0f5fe, #ddf8e2, #ffebcf, #fff5cf, #dad9f5",
+  "@color-list2":
+    "#f2bec3, #b7b9bd, #d2d2d3, #fabeb9, #ffe9a7, #a7e1c4, #add8f7, #ffbcb8, #a7d1ff, #c6ecfd, #c1f2ca, #ffdba7, #ffeda7, #bcbbec",
+  "@color-list3":
+    "#ea99a1, #8e9198, #b8b8ba, #f79992, #ffdd76, #76d0a3, #7ec2f3, #ff9590, #76b7ff, #a6e1fc, #9febac, #ffc676, #ffe476, #9594e1",
+  "@color-list4":
+    "#e16f7b, #5f646d, #9b9b9d, #f46e65, #ffce3d, #3dbd7d, #49a9ee, #ff6a62, #3d9aff, #81d5fb, #77e289, #ffae3d, #ffd83d, #6a68d5",
+  "@color-list5":
+    "#d84251, #2d333f, #7b7c7e, #f04134, #ffbf00, #00a854, #108ee9, #ff3b30, #007aff, #5ac8fa, #4cd964, #ff9500, #ffcc00, #3b38c8",
+  "@color-list6":
+    "#c0384f, #272c37, #6b6c6d, #d73435, #e09a00, #00924c, #0e77ca, #e62d32, #0065dd, #45abe1, #3fbf58, #e07500, #e0a600, #3630ad",
+  "@color-list7":
+    "#a72d4e, #21252e, #5a5b5c, #bd2636, #c17500, #007b43, #0c60aa, #cc1e35, #0050ba, #308dc8, #32a44c, #c15500, #c17f00, #302992",
+  "@color-list8":
+    "#8e234c, #1a1d25, #48494b, #a31837, #a04f00, #00643b, #09488a, #b20f37, #003a97, #1b6eae, #258940, #a03400, #a05700, #2b2176",
+  "@color-list9":
+    "#75184a, #14161c, #373839, #880a38, #802800, #004c32, #073069, #97003a, #002473, #054f94, #176d34, #801300, #802f00, #25195a",
   "@color-text": "rgba(0, 0, 0, 0.65)",
   "@color-text-hover": "#3d3d3d",
   "@color-text-disabled": "rgba(0, 0, 0, 0.25)",
@@ -203,7 +213,8 @@ export default {
   "@color-border": "#d7dde0",
   "@font-family-serif": "'Times New Roman', 'Times', 'serif'",
   "@font-family-mono": "'Consolas', 'Liberation Mono', 'Menlo', 'Courier', 'monospace'",
-  "@font-family-sans": "'Chinese Quote', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+  "@font-family-sans":
+    "'Chinese Quote', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
   "@font-weight-bold": "600",
   "@font-weight-regular": "400",
   "@font-weight-light": "300",

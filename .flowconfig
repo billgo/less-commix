@@ -7,7 +7,7 @@
 <PROJECT_ROOT>/umd/**/.*
 <PROJECT_ROOT>/lib/**/.*
 [include]
-<PROJECT_ROOT>/source/**/.*
+<PROJECT_ROOT>/src/**/.*
 
 [libs]
 
